@@ -3,7 +3,7 @@
 
 section .data
   msg db 'hello world', 0xA
-  tam equ 0x5 ; $- me da o tamanho da variavel 
+  tam equ $- msg ; $- me da o tamanho da variavel 
 
 section .text
 
@@ -18,6 +18,7 @@ _start:
   int   0x80
 
   ;destino -> origem
+output:
   mov   eax, 0x1 ; SO estou terminando o programa
   mov   ebx, 0x0 ; SO o valor de retorno é zero
   int 0x80  
